@@ -1,0 +1,12 @@
+clParse is a small (probably buggy, notably untested) web based PHP application that aggregates Craigslist RSS feeds onto one page. Listings can either be flagged or hidden from display. I use it to quickly flag the listings that I want to respond to throughout the day and later hide them after I respond. I also hide listings that are spam or do not fit my needs.
+
+Feel free to download and play with it. It was not built for use on a public server, so don’t come crying to me if your SQLs get injected.
+
+Prerequisites:
+Requires the MagpieRSS library, and expects it to be found at /MagpieRSS in the project root.
+
+Project Page:
+http://www.caseykinsey.com/2011/10/09/clparse-for-craigslist-aggregation/
+http://www.github.com/ckinsey/clParse
+
+Release under the MIT licence.  Do whatever you want with it!

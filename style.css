@@ -1,0 +1,68 @@
+body {
+        background: #FFF;
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial;
+        font-size: 14px;
+        color: #252525;
+}
+
+#header{ padding: 10px; background: #39F; }
+
+#header h1 {
+    color: #FFF;
+}
+
+#clParseWrapper table {    
+    width: 1000px;
+    border-spacing: 0px;
+    font-size: 12px;
+}
+
+#clParseWrapper td {
+    padding: 7px;
+    margin: 0px;
+}
+
+#clParseWrapper tr {
+    background: #CCC;
+    margin-top: 10px;
+}
+
+#clParseWrapper tr.even {
+    background: #DDD;    
+}
+
+#clParseWrapper tr.read {
+    opacity: .5;
+}   
+
+#clParseWrapper tr.flagged {
+    background: #EEC900;
+    opacity: 1 !important;
+}
+
+
+#clParseWrapper table.flagged tr {
+    opacity: 1 !important;
+}
+
+#clParseWrapper {
+    margin: 20px;
+}
+
+#clParseWrapper a {
+    color: #06C;
+}    
+
+#clParseWrapper p.navigation a, #clParseWrapper p.navigation span{
+    margin-right: 10px;
+}
+
+#clParseWrapper div.entry_wrapper {
+    width: 1000px;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+}
