@@ -3,10 +3,16 @@ clParse is a small (probably buggy, notably untested) web based PHP application 
 Feel free to download and play with it. It was not built for use on a public server, so don’t come crying to me if your SQLs get injected.
 
 Prerequisites:
-Requires the MagpieRSS library, and expects it to be found at /MagpieRSS in the project root.
+Requires the MagpieRSS library, and expects it to be found at `MagpieRSS/` in the project root.
 
 Project Page:
 http://www.caseykinsey.com/2011/10/09/clparse-for-craigslist-aggregation/
 http://www.github.com/ckinsey/clParse
 
 Release under the MIT licence.  Do whatever you want with it!
+
+*INSTALLATION*
+
+Throw the files onto a PHP/Apache server, and fill out your MySQL connection details in `settings.php`.  Then, fill up the `urls` in `settings.php` with a list of craigslist RSS feeds that you'd like to search.
+
+Download a copy of MagpieRSS (http://magpierss.sourceforge.net/) and put it in the project root.  You should be ready to go at that point.
