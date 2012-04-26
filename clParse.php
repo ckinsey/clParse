@@ -36,8 +36,15 @@ class clParse {
             die(mysql_error());
             
         //select database
-        mysql_select_db($s['db']['database'],$this->db_link); 
-        
+        if( ! mysql_select_db($s['db']['database'],$this->db_link) ) {
+        	// Try to create DB
+        	$this->run_query("CREATE DATABASE " . mysql_real_escape_string( $s['db']['database'] ) );
+        	$this->create_schema();
+        	
+        	// Re select
+        	mysql_select_db($s['db']['database'],$this->db_link);
+		}        
+		
         //Load url list from settings
         $this->urls = $s['urls'];
           
@@ -57,6 +64,21 @@ class clParse {
         }else{
             $this->set_error(mysql_error());
         }
+    }
+    
+    public function create_schema(){ 
+    	$this->run_query( "CREATE  TABLE `clParse`.`entries` (
+		  `id` INT NOT NULL AUTO_INCREMENT ,
+		  `title` VARCHAR(128) NULL ,
+		  `body` TEXT NULL ,
+		  `date` DATETIME NOT NULL ,
+		  `about` TEXT NULL ,
+		  PRIMARY KEY (`id`) ,
+		  INDEX `date` (`date` ASC) );" );
+
+		$this->run_query("ALTER TABLE `clParse`.`entries` ADD COLUMN `is_read` TINYINT(1)  NULL DEFAULT 0  AFTER `about` ;" );
+		$this->run_query("ALTER TABLE `clParse`.`entries` ADD COLUMN `is_flagged` TINYINT(1) NOT NULL DEFAULT 0  AFTER `is_read` , CHANGE COLUMN `is_read` `is_read` TINYINT(1) NOT NULL DEFAULT '0'  ;");
+
     }
     
     public function get_db_response(){

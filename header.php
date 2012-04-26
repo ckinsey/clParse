@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>clParser</title>
+    <title>clParse</title>
     <link type="text/css" rel="stylesheet" href="style.css" />
     
 
@@ -10,7 +10,7 @@
 
 <body>
     <div id="header">
-        <h1>clParser - Arkansas Developer Gigs</h1>
+        <h1>clParse - Craigslist Aggregator</h1>
     </div>
     <div id="clParseWrapper">
         
